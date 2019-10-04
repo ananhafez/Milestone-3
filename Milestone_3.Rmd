@@ -1,0 +1,35 @@
+---
+title: "Milestone_3"
+author: "Anan Hafez"
+date: "10/4/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(janitor)
+library(tidyr)
+library(stringr)
+library(httr)
+library(RCurl)
+library(lubridate)
+library(readxl)
+library(gt)
+library(reshape2)
+library(gov.1005.data)
+library(ggplot2)
+library(fivethirtyeight)
+library(googlesheets4)
+```
+
+```{r}
+nba_data <- read.csv("https://raw.githubusercontent.com/ananhafez/Predict-NBA-Stats/master/04.%20clean_stats/nba_stats_clean_historic.csv") %>% clean_names()
+
+glimpse(nba_data)
+
+summary(nba_data)
+```
+
+I found this data on a GitHub repository when I searched for NBA statistics for my final project. This is the raw data on all NBA stats from 1981 to 2016 including every player. I would like to find a way to add in the 2017 and 2018 statictics to get a more developed picture of the NBA. Let me explain what my project is about! Everytime I watch the NBA today the commentators always talk about how everybody want to shoot 3-point shots nowadays, suggesting that the classic 2-point shot is dying out. My father, who was a huge NBA fan ever since he came to America in the late 80's, has also made this same argument to me. I'd really like to see if there really is truth to these observations and if so, how much has 3-point shooting changed the game? Looking forward to learning more!
+
